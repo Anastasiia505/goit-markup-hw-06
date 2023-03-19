@@ -65,6 +65,13 @@ body {
   line-height: inherit;
   letter-spacing: 0.04em;
   border-radius: 4px;
+  background-color: var(--primary-brand-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-brand-color);
+  padding: 16px 32px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title {
@@ -193,17 +200,9 @@ body {
   width: 496px;
   margin: 0 auto 48px auto;
 }
-.hero-btn {
-  background-color: var(--primary-brand-color);
-  color: var(--secondary-color);
-  border: 1px solid var(--primary-brand-color);
-  padding: 16px 32px;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.hero-btn:hover,
-.hero-btn:focus {
+
+.btn:hover,
+.btn:focus {
   background-color: var(--pressed-state-color);
   border: 1px solid var(--pressed-state-color);
 }
@@ -490,12 +489,12 @@ body {
 }
 .modal {
   width: 408px;
-  height: 576px;
+  height: 584px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 20px;
+  padding: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -518,4 +517,135 @@ body {
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
+}
+.modal-title {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-btn {
+  display: block;
+  margin: 24px auto;
+}
+.form-label span {
+  display: block;
+}
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px 5px 38px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--primary-brand-color);
+}
+.form-input:focus + .form-icon {
+  fill: var(--primary-brand-color);
+}
+
+.form-group {
+  margin-top: 8px;
+}
+.form-control {
+  position: relative;
+}
+.form-label,
+::placeholder {
+  color: var(--light-slate);
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px 10px 5px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  resize: none;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-label.private {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+}
+
+.form-label.private .checkbox-icon {
+  border: 1.25px solid var(--basic-color);
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-checkbox:checked + .form-label.private .checkbox-icon {
+  fill: var(--accent-color);
+  background-color: var(--pressed-state-color);
+  border-color: var(--pressed-state-color);
+}
+
+/* footer form */
+.footer-form {
+  margin-left: 80px;
+}
+.subscribe-wrapper {
+  display: flex;
+  column-gap: 24px;
+}
+.footer-label {
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.footer-input {
+  width: 264px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding-left: 16px;
+}
+.footer-input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-btn {
+  display: flex;
+  width: 165px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-icon {
+  margin-left: 16px;
 }
